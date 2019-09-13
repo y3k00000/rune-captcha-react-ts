@@ -43,7 +43,7 @@ const ReactOverlay = React.forwardRef<ReactOverlayRef, ReactOverlayProps>((props
         position: fixed;
         z-index:${Number.MAX_SAFE_INTEGER};
     }`.trim();
-    var reactContainer = createElementFromString(`
+    let reactContainer = createElementFromString(`
         <div id="react-overlay-container"></div>
     `);
     head.appendChild(reactContainerStyle)

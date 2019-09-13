@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build": "parcel build src/index.tsx",
-    "test": "parcel src/test.html"
+    "test": "parcel src/test.html -d temp"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,25 +1,25 @@
 import * as React from "react";
-import { Button,Grid } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
 import * as ReactDOM from "react-dom";
 import { createElementFromString } from './utils';
 
-interface ReactOverlayState extends React.ComponentState {
-    testState:string
+interface ReactOverlayState {
+    testState: string
 }
 
-interface ReactOverlayRef{
-    setMessage:(message:string)=>void
+interface ReactOverlayRef {
+    setMessage: (message: string) => void
 }
 
 interface ReactOverlayProps {
     onClose: (() => void);
-    ref:ReactOverlayRef;
+    ref: ReactOverlayRef;
 }
 
-const ReactOverlay = React.forwardRef<ReactOverlayRef, ReactOverlayProps>((props,ref) => {
-    let [state, setState] = React.useState({testState:""});
-    React.useImperativeHandle(ref, ()=>({
-        setMessage:(message:string)=>setState({testState:message})
+const ReactOverlay = React.forwardRef<ReactOverlayRef, ReactOverlayProps>((props, ref) => {
+    let [state, setState] = React.useState({ testState: "" });
+    React.useImperativeHandle(ref, () => ({
+        setMessage: (message: string) => setState({ testState: message })
     }));
     return (
         <Grid container justify="center">
